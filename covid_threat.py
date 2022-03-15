@@ -5,7 +5,7 @@ import pandas as pd
 
 
 
-def scrape_table_of_regions
+def scrape_table_of_regions():
     """
     scraping oficial postcode website for NSW (Australia)
     """
@@ -26,12 +26,12 @@ def match_regions_with_postbox():
     """
     based on scraped data match sites and poboxes to reveal regions in lockdown
     """
-    scraped_table = scrape_table_of_regions()
-    # initialize dictionary
+    table_of_sites = scrape_table_of_regions()
+
     all_nsw_sites = {i:''for i in range(2000,2915)}
 
     length = 0
-    while length < len(tables[0]):
+    while length < len(table_of_sites[0]):
         first, second = 0,0
         if len(table_of_sites['Postcode Range'].iloc[length]) == 11:
             first, second = int(table_of_sites['Postcode Range'].iloc[length][0:4]), int(table_of_sites['Postcode Range'].iloc[length][7:11])
