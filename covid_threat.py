@@ -10,7 +10,7 @@ def scrape_table_of_regions():
     scraping oficial postcode website for NSW (Australia)
     """
     base_site = "https://www.training.nsw.gov.au/about_us/postcodes_byregion.html"
-
+    print("bla")
     # connect to webpage
     r = requests.get(base_site)
     # To extract all tables on a page, use pandas.read_html()
